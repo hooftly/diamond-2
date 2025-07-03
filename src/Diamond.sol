@@ -1,14 +1,15 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.7.1;
+pragma solidity ^0.8.30;
 pragma experimental ABIEncoderV2;
 
-/******************************************************************************\
-* Author: Nick Mudge <nick@perfectabstractions.com> (https://twitter.com/mudgen)
-* EIP-2535 Diamond Standard: https://eips.ethereum.org/EIPS/eip-2535
-*
-* Implementation of a diamond.
-/******************************************************************************/
-
+/**
+ * \
+ * Author: Nick Mudge <nick@perfectabstractions.com> (https://twitter.com/mudgen)
+ * EIP-2535 Diamond Standard: https://eips.ethereum.org/EIPS/eip-2535
+ *
+ * Implementation of a diamond.
+ * /*****************************************************************************
+ */
 import "./libraries/LibDiamond.sol";
 import "./interfaces/IDiamondLoupe.sol";
 import "./interfaces/IDiamondCut.sol";
@@ -50,12 +51,8 @@ contract Diamond {
             let result := delegatecall(gas(), facet, 0, calldatasize(), 0, 0)
             returndatacopy(0, 0, returndatasize())
             switch result
-                case 0 {
-                    revert(0, returndatasize())
-                }
-                default {
-                    return(0, returndatasize())
-                }
+            case 0 { revert(0, returndatasize()) }
+            default { return(0, returndatasize()) }
         }
-    }    
+    }
 }

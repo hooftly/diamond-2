@@ -49,8 +49,6 @@ import "../libraries/LibAccessControl.sol";
  * to enforce additional security measures for this role.
  */
 abstract contract AccessControlD is Context, IAccessControl, ERC165 {
-   
-
     bytes32 public constant DEFAULT_ADMIN_ROLE = 0x00;
 
     /**
@@ -101,7 +99,6 @@ abstract contract AccessControlD is Context, IAccessControl, ERC165 {
      * To change a role's admin, use {_setRoleAdmin}.
      */
     function getRoleAdmin(bytes32 role) public view virtual returns (bytes32) {
-        
         return LibAccessControl.accessControlStorage()._roles[role].adminRole;
         //return _roles[role].adminRole;
     }
