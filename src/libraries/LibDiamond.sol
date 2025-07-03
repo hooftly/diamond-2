@@ -2,15 +2,12 @@
 pragma solidity ^0.8.30;
 pragma experimental ABIEncoderV2;
 
-/**
- * \
- * Author: Nick Mudge <nick@perfectabstractions.com> (https://twitter.com/mudgen)
- * EIP-2535 Diamond Standard: https://eips.ethereum.org/EIPS/eip-2535
- *
- * This is gas optimized by reducing storage reads and storage writes.
- * This code is as complex as it is to reduce gas costs.
- * /*****************************************************************************
- */
+// Author: Nick Mudge <nick@perfectabstractions.com> (https://twitter.com/mudgen)
+// EIP-2535 Diamond Standard: https://eips.ethereum.org/EIPS/eip-2535
+
+// This is gas optimized by reducing storage reads and storage writes.
+// This code is as complex as it is to reduce gas costs.
+
 import "../interfaces/IDiamondCut.sol";
 
 library LibDiamond {
